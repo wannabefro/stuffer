@@ -11,16 +11,21 @@ module Stuffer
   end
 
   def self.get_fields page
-    @capy_fields = []
+    @capy_fields = {}
     Capybara.visit page
     @factory_fields.keys.each do |field|
       if Capybara.page.find_field(field.capitalize)
-        @capy_fields << field
+        @capy_fields[field] = Capybara.page.find_field(field.capitalize).tag_name
       end
     end
     @capy_fields
   end
 
+  def self.fill name
+    if @factory_fields.keys.include?(name) && @capy_fields[name] == 'input'
+      Capybara.fill_in name.capitalize, with: @factory_fields[name]
+    end
+  end
 
 
 
