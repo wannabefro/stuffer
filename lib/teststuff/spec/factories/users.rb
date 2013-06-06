@@ -5,5 +5,6 @@ FactoryGirl.define do
     name "Stuff"
     email "Me"
     number 23
+    stuffed true
   end
 end

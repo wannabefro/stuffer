@@ -29,5 +29,17 @@ describe 'stuffing' do
     expect(user.number).to eql(23)
   end
 
+  it 'can check a box' do
+    Stuffer.factorize :user
+    Stuffer.get_fields '/users/new'
+    Stuffer.check :stuffed
+    click_on 'Create User'
+
+    user = User.last
+    expect(user.stuffed).to be_true
+  end
+
+
+
 
 end
