@@ -23,7 +23,7 @@ end
 
 gem 'jquery-rails'
 
-gem 'stuffer', :path => '../stuffer'
+gem 'stuffer', :path => '../../'
 
 group :test, :development do
   gem 'rspec-rails'
