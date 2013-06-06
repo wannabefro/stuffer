@@ -1,5 +1,7 @@
 require "stuffer/version"
 
 module Stuffer
-  # Your code goes here...
+  def self.factorize factory
+    FactoryGirl.attributes_for(factory)
+  end
 end

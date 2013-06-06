@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Stuffer::VERSION
   spec.authors       = ["Matt Buckley", "Sam McTaggart"]
   spec.email         = ["matt.d.buckley1212@gmail.com", "sam.mctaggart@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Stuff it up}
+  spec.summary       = %q{The greatest gem of all time}
   spec.homepage      = ""
   spec.license       = "MIT"
 
