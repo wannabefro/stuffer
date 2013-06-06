@@ -4,5 +4,6 @@ FactoryGirl.define do
   factory :user do
     name "Stuff"
     email "Me"
+    number 23
   end
 end

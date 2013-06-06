@@ -27,6 +27,12 @@ module Stuffer
     end
   end
 
+  def self.select selection
+    if @factory_fields.keys.include?(selection) && @capy_fields[selection] == 'select'
+      Capybara.select(@factory_fields[selection], from: @factory_fields.key(@factory_fields[selection]).capitalize)
+    end
+  end
+
 
 
 end
