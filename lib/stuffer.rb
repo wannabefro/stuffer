@@ -18,15 +18,15 @@ module Stuffer
     @capy_fields = {}
     Capybara.visit page
     @id.each do |field|
-      binding.pry
-      if Capybara.page.find_field(field)
-        @capy_fields[field] = Capybara.page.find_field(field).tag_name
-      elsif Capybara.page.find(".#{field}")
+      begin
+        Capybara.page.find_field(field)
+      rescue
+        false
+      else
         @capy_fields[field] = Capybara.page.find_field(field).tag_name
       end
     end
     @capy_fields
-    binding.pry
   end
 
   def self.fill name
@@ -44,6 +44,27 @@ module Stuffer
   def self.check checkbox
     if @factory_fields.keys.include?(checkbox) && @capy_fields["#{@factory_convert+checkbox.to_s}"] == 'input'
       Capybara.check("#{@factory_convert+checkbox.to_s}")
+    end
+  end
+
+  def self.radio value
+    if @factory_fields.keys.include?(value)
+      Capybara.choose("#{@factory_convert+value.to_s}_#{@factory_fields[value]}")
+    end
+  end
+
+  def self.stuff
+    @factory_fields.keys.each do |stuff|
+      # binding.pry
+      if @capy_fields["#{@factory_convert+stuff.to_s}"] == 'input' && @factory_fields[stuff] != false && @factory_fields[stuff] != true
+        fill stuff
+      elsif @capy_fields["#{@factory_convert+stuff.to_s}"] == 'input'
+        check stuff
+      elsif @capy_fields["#{@factory_convert+stuff.to_s}"] == 'select'
+        select stuff
+      else
+        radio stuff
+      end
     end
   end
 
