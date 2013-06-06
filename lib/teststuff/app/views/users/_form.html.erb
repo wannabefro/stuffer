@@ -25,6 +25,9 @@
   <div class="field">
     <%= f.input :stuffed %>
   </div>
+  <div class="field">
+    <%= f.input :food, collection: ['toast', 'bacon', 'cucumber'], as: :radio_buttons %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

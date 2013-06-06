@@ -6,5 +6,6 @@ FactoryGirl.define do
     email "Me"
     number 23
     stuffed true
+    food 'cucumber'
   end
 end

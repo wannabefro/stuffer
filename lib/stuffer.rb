@@ -18,11 +18,15 @@ module Stuffer
     @capy_fields = {}
     Capybara.visit page
     @id.each do |field|
+      binding.pry
       if Capybara.page.find_field(field)
+        @capy_fields[field] = Capybara.page.find_field(field).tag_name
+      elsif Capybara.page.find(".#{field}")
         @capy_fields[field] = Capybara.page.find_field(field).tag_name
       end
     end
     @capy_fields
+    binding.pry
   end
 
   def self.fill name
