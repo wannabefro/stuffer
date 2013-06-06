@@ -24,4 +24,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "capybara"
   spec.add_development_dependency "factory_girl_rails"
   spec.add_development_dependency "launchy"
+  spec.add_development_dependency 'pry'
 end
