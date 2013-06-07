@@ -61,7 +61,7 @@ You can then use stuffer just as you would with a single model
 5. Create new Pull Request
 
 ## Credit
-[capybara](https://github.com/jnicklas/capybara)
-[FactoryGirl](https://github.com/thoughtbot/factory_girl)
-[HeroicEric](https://github.com/HeroicEric)
-[MattThousand](https://github.com/mattThousand)
+[capybara](https://github.com/jnicklas/capybara)<br>
+[FactoryGirl](https://github.com/thoughtbot/factory_girl)<br>
+[HeroicEric](https://github.com/HeroicEric)<br>
+[MattThousand](https://github.com/mattThousand)<br>
