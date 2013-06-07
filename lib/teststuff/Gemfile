@@ -24,7 +24,7 @@ end
 
 gem 'jquery-rails'
 
-gem 'stuffer', :git => 'git@github.com:wannabefro/stuffer.git', :branch => 'master'
+gem 'stuffer', path: '../../'
 
 group :test, :development do
   gem 'rspec-rails'

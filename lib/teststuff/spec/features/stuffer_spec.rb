@@ -89,6 +89,27 @@ describe 'stuffing' do
     expect(info.wage).to eql(1)
   end
 
+  it "doesn't fill in a field if you pass it as an argument to stuff" do
+    visit new_user_path
+    Stuffer.factorize :user
+    Stuffer.stuff :email
+    click_on 'Create User'
+
+    user = User.last
+    expect(user.email).to eql("")
+  end
+
+  it "doesn't fill in multiple fields if you pass in multiple arguments" do
+    visit new_user_path
+    Stuffer.factorize :user
+    Stuffer.stuff :email, :food
+    click_on 'Create User'
+
+    user = User.last
+    expect(user.email).to eql("")
+    expect(user.food).to eql(nil)
+  end
+
 
 
 end
