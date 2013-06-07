@@ -33,6 +33,11 @@ to automatically fill in all fields on the page
 
     Stuffer.stuff
     
+you can tell stuffer to not fill in certain fields on a stuff by passing the factory_field
+as an argument to stuff i.e.
+
+    Stuffer.stuff :factory_field
+    
 to fill in individual fields, stuffer currently supports input_fields, selections,
 checkboxes and radio buttons
 
