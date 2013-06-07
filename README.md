@@ -59,3 +59,9 @@ You can then use stuffer just as you would with a single model
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## Credit
+[capybara](https://github.com/jnicklas/capybara)
+[FactoryGirl](https://github.com/thoughtbot/factory_girl)
+[HeroicEric](https://github.com/HeroicEric)
+[MattThousand](https://github.com/mattThousand)
