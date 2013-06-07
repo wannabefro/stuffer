@@ -1,8 +1,8 @@
 # Stuffer
 
 Combines factory_girl and capybara to automatically populate forms
-with factory_girl information
-Pull requests welcome. Make sure to submit a failing test!
+with factory_girl information<br>
+<strong>Pull requests welcome. Make sure to submit a failing test</strong>
 
 ## Installation
 
