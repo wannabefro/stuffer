@@ -10,8 +10,9 @@ describe 'stuffing' do
 
 
   it 'gets input fields' do
+    visit new_user_path
     Stuffer.factorize :user
-    Stuffer.get_fields '/users/new'
+    Stuffer.get_fields
     Stuffer.fill :name
     click_on 'Create User'
 
@@ -20,8 +21,9 @@ describe 'stuffing' do
   end
 
   it 'gets select boxes' do
+    visit new_user_path
     Stuffer.factorize :user
-    Stuffer.get_fields '/users/new'
+    Stuffer.get_fields
     Stuffer.select :number
     click_on 'Create User'
 
@@ -30,8 +32,9 @@ describe 'stuffing' do
   end
 
   it 'can check a box' do
+    visit new_user_path
     Stuffer.factorize :user
-    Stuffer.get_fields '/users/new'
+    Stuffer.get_fields
     Stuffer.check :stuffed
     click_on 'Create User'
 
@@ -40,8 +43,9 @@ describe 'stuffing' do
   end
 
   it 'can select a radio button' do
+    visit new_user_path
     Stuffer.factorize :user
-    Stuffer.get_fields '/users/new'
+    Stuffer.get_fields
     Stuffer.radio :food
     click_on 'Create User'
 
@@ -50,8 +54,9 @@ describe 'stuffing' do
   end
 
   it 'can stuff it' do
+    visit new_user_path
     Stuffer.factorize :user
-    Stuffer.get_fields '/users/new'
+    Stuffer.get_fields
     Stuffer.stuff
     click_on 'Create User'
 
