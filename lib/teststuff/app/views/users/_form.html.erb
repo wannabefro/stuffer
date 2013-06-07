@@ -28,6 +28,11 @@
   <div class="field">
     <%= f.input :food, collection: ['toast', 'bacon', 'cucumber'], as: :radio_buttons %>
   </div>
+  <%= f.simple_fields_for :info do |p| %>
+  <div class="field">
+    <%= p.input :wage %>
+  </div>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
