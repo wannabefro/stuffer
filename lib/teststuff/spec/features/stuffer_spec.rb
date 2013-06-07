@@ -79,6 +79,16 @@ describe 'stuffing' do
     expect(info.wage).to eql(1)
   end
 
+  it 'can fill in a nested form' do
+    visit new_user_path
+    Stuffer.factorize :user, :info
+    Stuffer.fill :wage
+    click_on 'Create User'
+
+    info = Info.last
+    expect(info.wage).to eql(1)
+  end
+
 
 
 end
