@@ -1,6 +1,7 @@
 # Stuffer
 
-TODO: Write a gem description
+Combines factory_girl and capybara to automatically populate forms
+with factory_girl information
 
 ## Installation
 
@@ -18,7 +19,37 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+visit the page you want to fill with capybara i.e.
+    
+    visit new_user_path
+    
+load your factory into stuffer
+
+    Stuffer.factorize :factory_name
+    
+to automatically fill in all fields on the page
+
+    Stuffer.stuff
+    
+to fill in individual fields, stuffer currently supports input_fields, selections,
+checkboxes and radio buttons
+
+    Stuffer.fill :factory_field
+    Stuffer.select :factory_field
+    Stuffer.check :factory_field
+    Stuffer.radio :factory_field
+    
+don't forget to submit the form with capybara after Stuffer
+    
+    click_on 'Create user'
+    
+You can also use nested forms with stuffer.
+First factorize both the form and the nested form
+
+    Stuffer.factorize :factory_name, :nested_factory_name
+    
+It's important that the nested factory is supplied as the second argument
+You can then use stuffer just as you would with a single model
 
 ## Contributing
 
