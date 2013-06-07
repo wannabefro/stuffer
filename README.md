@@ -2,7 +2,8 @@
 
 Combines factory_girl and capybara to automatically populate forms
 with factory_girl information<br>
-<strong>Pull requests welcome. Make sure to submit a failing test</strong>
+**Pull requests welcome. Make sure to submit a successful test**<br>
+**Submit a failing test with any bugs/issues**
 
 ## Installation
 
