@@ -42,7 +42,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
-    @info = @user.create_info(params[:info])
+    # @info = @user.build_info(params[:info_attributes])
 
     respond_to do |format|
       if @user.save

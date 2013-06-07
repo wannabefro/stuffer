@@ -63,23 +63,21 @@ describe 'stuffing' do
     expect(user.food).to eql('cucumber')
   end
 
-  # it 'can handle 2 factories' do
-  #   visit new_user_path
-  #   Stuffer.factorize :user
-  #   Stuffer.stuff
-  #   Stuffer.factorize :info
-  #   Stuffer.stuff
-  #   click_on 'Create User'
+  it 'can handle 2 factories' do
+    visit new_user_path
+    Stuffer.factorize :user, :info
+    Stuffer.stuff
+    click_on 'Create User'
 
-  #   user = User.last
-  #   expect(user.name).to eql('Stuff')
-  #   expect(user.number).to eql(23)
-  #   expect(user.stuffed).to be_true
-  #   expect(user.food).to eql('cucumber')
+    user = User.last
+    expect(user.name).to eql('Stuff')
+    expect(user.number).to eql(23)
+    expect(user.stuffed).to be_true
+    expect(user.food).to eql('cucumber')
 
-  #   info = Info.last
-  #   expect(user.wage).to eql(1)
-  # end
+    info = Info.last
+    expect(info.wage).to eql(1)
+  end
 
 
 
