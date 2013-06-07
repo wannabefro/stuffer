@@ -113,7 +113,11 @@ module Stuffer
     end
   end
 
-  def self.stuff
+  def self.stuff(*args)
+    args.each do |arg|
+      remove = convert arg
+      @id.delete(remove)
+    end
     @id.each do |stuff|
       if @capy_fields[stuff] == 'input' && @fields[stuff] != false && @fields[stuff] != true
         fill stuff
