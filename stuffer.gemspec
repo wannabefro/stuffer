@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Stuffer::VERSION
   spec.authors       = ["Matt Buckley", "Sam McTaggart"]
   spec.email         = ["matt.d.buckley1212@gmail.com", "sam.mctaggart@gmail.com"]
-  spec.description   = %q{Stuff it up}
-  spec.summary       = %q{The greatest gem of all time}
-  spec.homepage      = ""
+  spec.description   = %q{Stuffer combines capybara with factorygirl to auto fill forms for you}
+  spec.summary       = %q{}
+  spec.homepage      = "https://github.com/wannabefro/stuffer"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
@@ -25,4 +25,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "factory_girl_rails"
   spec.add_development_dependency "launchy"
   spec.add_development_dependency 'pry'
+  spec.add_runtime_dependency 'capybara'
+  spec.add_runtime_dependency 'factory_girl_rails'
 end
